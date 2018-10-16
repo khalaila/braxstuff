@@ -1,0 +1,105 @@
+body{
+    min-height: 100vh;
+    margin: 20px;
+}
+
+.wrapper{
+    height: 100vh;
+    display: grid; 
+    grid-gap: 50px;
+    grid-template-rows: 60px auto 50px;
+}
+
+.top{
+    height: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3 1fr);
+    grid-template-areas:
+    "hero hero2 cta";
+    background-color: yellow;
+}
+
+
+
+.hero2{
+    grid-area: hero2;
+    height: 100%;
+    background-color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 300;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.hero{
+    grid-area: hero;
+    height: 100%;
+    background-color: white;
+}
+
+
+.cta{
+    grid-area: cta;
+    height: 100%;
+    background-color: white;
+}
+
+@media (max-width: 600px) {
+    .middle{
+        display: grid;
+        grid-template-columns: auto-fit;
+        padding: 30px;
+        background: aquamarine;        
+    }
+    .middle > .h{
+        display: none
+    }
+    .top{
+        height: 100%;
+        display: grid;
+        grid-gap: 0px;
+        grid-template-areas:
+        "hero2";
+        background-color: yellow;
+    }
+   
+    .hero{
+        display: none;
+    }
+    .cta{
+        display: none;
+    }
+}
+
+.middle{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 100px, auto-fit;
+    grid-template-areas:
+    "h c c";
+    padding: 30px;
+    background: aquamarine;
+    position: static;
+}
+
+.h{
+    grid-area: h;
+    background-color: aliceblue;
+}
+
+.c{
+    grid-area: c;
+}
+
+.content{
+    background-color: black;
+}
+
+.footer{
+    background-color: yellow;
+}
